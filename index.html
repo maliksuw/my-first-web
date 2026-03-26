@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Cool First Website with Photo</title>
+    <title>My Interactive First Website</title>
     
     <style>
         body {
@@ -27,14 +27,13 @@
             width: 100%;
         }
 
-        /* ตกแต่งรูปภาพ */
         .profile-img {
-            width: 150px; /* กำหนดความกว้าง */
-            height: 150px; /* กำหนดความสูง */
-            border-radius: 50%; /* ทำเป็นวงกลม */
-            object-fit: cover; /* ให้รูปพอดีกับวงกลม */
-            border: 5px solid white; /* ขอบขาว */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* เงารูป */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             margin-bottom: 20px;
         }
 
@@ -49,12 +48,25 @@
             margin-bottom: 30px;
         }
 
-        .status {
-            background-color: #e8f0fe;
-            color: #1a73e8;
-            padding: 10px;
+        /* ตกแต่งปุ่ม (Button Style) */
+        .my-button {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
             font-weight: bold;
-            border-radius: 20px;
+        }
+
+        .my-button:hover {
+            background-color: #155cb0;
+        }
+
+        .my-button:active {
+            transform: scale(0.98); /* เอฟเฟกต์ตอนกดปุ่ม */
         }
     </style>
 </head>
@@ -63,9 +75,18 @@
         
         <img src="Malik-Hat.jpg" alt="My Profile Photo" class="profile-img">
 
-        <h1>สวัสดีครับ! เว็บผมมีรูปแล้ว</h1>
-        <p>คุณกำลังดูเว็บไซต์ที่อัปเดตอัตโนมัติผ่าน GitHub Actions! การใส่รูปภาพช่วยทำให้เว็บดูน่าสนใจขึ้นมากเลยใช่ไหมครับ?</p>
-        <span class="status">CI/CD is Working!</span>
+        <h1>สวัสดีครับ! นี่คือเว็บแบบมีปุ่มโต้ตอบ</h1>
+        <p>คุณกำลังดูเว็บไซต์ที่อัปเดตอัตโนมัติผ่าน GitHub Actions! การใส่รูปภาพช่วยทำให้เว็บดูน่าสนใจขึ้นมากเลยใช่ไหมครับ? ลองกดปุ่มข้างล่างดูสิ!</p>
+        
+        <button class="my-button" onclick="sayHello()">กดที่นี่!</button>
     </div>
+
+    <script>
+        // เราสร้าง "ฟังก์ชัน (Function)" ขึ้นมาชื่อ sayHello
+        function sayHello() {
+            // คำสั่ง alert() คือคำสั่งมาตรฐานของ JavaScript สำหรับแสดงป๊อปอัพพื้นฐานของ Browser
+            alert("ยินดีด้วยครับ! คุณเพิ่งทำ Lab JavaScript สำเร็จ \n\nเว็บไซต์ของคุณสามารถโต้ตอบกับผู้ใช้ได้แล้ว!");
+        }
+    </script>
 </body>
 </html>
